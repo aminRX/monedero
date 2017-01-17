@@ -1,0 +1,7 @@
+* Create database
+Terminal command: psql -d template1
+> CREATE database monedero_development
+> CREATE database monedero_test
+> CREATE database monedero_production
+> CREATE USER benitocamela WITH PASSWORD 'fuckyeah';
+> ALTER USER benitocamela WITH SUPERUSER;

@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: benitocamela
+  password: fuckyeah
+  pool: 5
+
+development:
+  <<: *default
+  database: monedero_development
+
+test:
+  <<: *default
+  database: monedero_test
+
+production:
+  <<: *default
+  database: monedero_production
