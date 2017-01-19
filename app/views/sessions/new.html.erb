@@ -1,0 +1,8 @@
+<h2>Login</h2>
+<%= form_for :sessions, url: sessions_path do |f| %>
+  <%= f.label :userid%>
+  <%= f.text_field :userid %>
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+  <%= f.submit 'Inicio' %>
+<% end %>
