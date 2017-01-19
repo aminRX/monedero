@@ -1,4 +1,10 @@
 <h2>Login</h2>
+<% if flash[:error] %>
+  <div class="notice"><%= flash[:error] %></div>
+<% end %>
+<% if flash[:joined] %>
+  <div class="notice"><%= flash[:joined] %></div>
+<% end %>
 <%= form_for :sessions, url: sessions_path do |f| %>
   <%= f.label :userid%>
   <%= f.text_field :userid %>
