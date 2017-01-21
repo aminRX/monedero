@@ -1,8 +1,37 @@
-<h2>Login</h2>
-<%= form_for :sessions, url: sessions_path do |f| %>
-  <%= f.label :userid%>
-  <%= f.text_field :userid %>
-  <%= f.label :password %>
-  <%= f.text_field :password %>
-  <%= f.submit 'Inicio' %>
+<body class="login-img3-body">
+<div class="container">
+  <div class="row justify-content-md-center ">
+    <div class="col col-lg-2">
+
+<%= form_for :sessions, url: sessions_path do |f| %> 
+
+
+  <%= form_for:sessions, url: sessions_path do |f|  %>
+<div class="input-group">
+  <%= f.label  :userid, "Usuario", class: ' input-group-addon icon_profile pull_right' %>
+   <%= text_field_tag :Usuario, nil, class:'form-control '%>
+</div>
 <% end %>
+
+
+<%= form_for:sessions, url: sessions_path do |f|  %>
+<div class="input-group">
+  <%= f.label :password, "Contrasena", class:' input-group-addon icon_profile  pull_right'  %>
+   <%= password_field :login, nil, class:'form-control input-group'%>
+</div>
+<% end %>
+
+
+
+
+
+
+  <%= f.submit 'Entrar', class: 'btn btn-primary btn-lg btn-block' %>
+<% end %>
+
+</div>
+  </div>
+    </div>
+    </div>
+      </body>
+      </form>
