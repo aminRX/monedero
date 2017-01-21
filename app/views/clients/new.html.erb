@@ -1,2 +1,8 @@
-<h1>Clients#new</h1>
-<p>Find me in app/views/clients/new.html.erb</p>
+  <h1>Monedero Electronico Alta</h1>
+  <h2 class="sub-header">Usuarios Nuevos</h2>
+
+  <%= form_for :client, url: clients_path do |f| %>
+    <%= f.label :client_number %>
+    <%= f.text_field :client_number %>
+    <%= f.submit "Create" %>
+  <% end %>
