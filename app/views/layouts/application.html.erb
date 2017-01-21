@@ -9,6 +9,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if sign_in? %>
+      <%= render 'layouts/header' %>
+      <div class="container-fluid">
+        <div class="row">
+          <%= render 'layouts/leftbar' %>
+          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+
+          <%= yield %>
+    <% end %>
   </body>
 </html>

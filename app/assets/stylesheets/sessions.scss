@@ -7,43 +7,23 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-body {
-  background : url('azultelcel.jpg') no-repeat center center fixed; /* fallback for old browsers */
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;  
-  font-family: "Roboto", sans-serif;
-  box-sizing: 100%;
-
-    color: #797979;
-    font-family: 'Lato', sans-serif;
-
-    padding: 0px !important;
-
-    margin: 0px !important;
-
-    font-size:14px !important;    
-
+.session-background-image {
+  background : url('azultelcel.jpg') no-repeat center center fixed; /* fallback for old browsers */ 
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
-.container {
+.login-container {
  padding: 30px;
  padding-top: 30px;
-  max-width: 350px;
+  max-width: 300px;
   margin: 200px auto;
 
   background-color: #D9D0DE;
   border-radius: 2px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   font-family: roboto;
-    margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  display: in;
-
   }
 
 
@@ -52,9 +32,7 @@ body {
 .titlesection {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
-  border-top-style: solid;
-  border-top-width: 0px;
-  border-top: 0px;
+
   color: #fff;
   text-align: center;
 
@@ -87,23 +65,7 @@ body {
     background: rgba(213,215,222,0.9);
 }
 
-.login-form .form-control {
 
-    position: relative;
-
-    font-size: 16px;
-
-    height: auto;
-
-    padding: 10px;
-
-    -webkit-box-sizing: border-box;
-
-    -moz-box-sizing: border-box;
-
-    box-sizing: border-box;
-
-}
 
 .login-form .form-control:focus {
 
@@ -117,59 +79,35 @@ body {
 }
 
 .login-form .input-group-addon{
-
     padding: 6px 12px;
-
     font-size: 16px;
-
     color: #8b9199;
-
     font-weight: normal;
-
     line-height: 1;
-
     text-align: center;
-
     background-color: #ffffff;
-
     border: none;
-
     border-radius: 0;
 }
 .login-form .login-img{
-
     font-size: 50px;
-
     font-weight: 300;    
-
 }
 
 .login-form .input-group{
-
     padding-bottom: 15px;
-
 }
 
 .login-form .input-group-addon{
-
     padding: 6px 12px;
-
     font-size: 16px;
-
     color: #8b9199;
-
     font-weight: normal;
-
     line-height: 1;
-
     text-align: center;
-
     background-color: #ffffff;
-
     border: none;
-
     border-radius: 0;
-
 }
 
 .login-form input[type="text"], .login-form input[type="password"] {    
@@ -248,16 +186,8 @@ body {
 
 
     color: #00a0df;
-
 }
 
-
-
-.login-wrap {
-
-    padding: 20px;
-
-}
 
 input:focus, textarea:focus { outline: none; }
 
@@ -283,53 +213,12 @@ table tr th { color: #688a7e;}
 
 
 
-#container {
-
-    width: 100%;
-
-    height: 100%;
-
-}
 
 
 
-.Creative-pro, .Creative-pro h3{
-
-    display: block;
-
-    position: fixed;
-
-    bottom:0;
-
-    z-index: 100000;
-
-    width: 100%;
-
-    overflow: hidden;
-
-    height: 50px;
-
-    margin:0px;
-
-}
-
-.Creative-pro h3{
-
-    padding-bottom: 10px;
-
-    padding-top: 10px;
-
-}
-
-.lite{
-
-    color: #00a0df !important;
-
-}
 
 
 
-/*login page*/
 
 
 
@@ -367,28 +256,8 @@ table tr th { color: #688a7e;}
 
 }
 
-.login-img3-body{
-
-  background: url('azultelcel.jpg') no-repeat center center fixed; 
-
-  -webkit-background-size: cover;
-
-  -moz-background-size: cover;
-
-  -o-background-size: cover;
-
-  background-size: cover;
-
-}
 
 
 
-.login-form {
 
-    max-width: 350px;
-
-    margin: 200px auto 0;
-
-    background: #d5d7de;    
-}
 
