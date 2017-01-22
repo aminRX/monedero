@@ -8,7 +8,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .session-background-image {
-  background : url('azultelcel.jpg') no-repeat center center fixed; /* fallback for old browsers */ 
+background: #01579B;
+background-size: 100% 100%;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -19,12 +20,15 @@
  padding-top: 30px;
   max-width: 300px;
   margin: 200px auto;
+  background-size: 100% 100%;
 
   background-color: #D9D0DE;
   border-radius: 2px;
   overflow: hidden;
   font-family: roboto;
   }
+
+
 
 
 
@@ -208,51 +212,6 @@ table tr th { color: #688a7e;}
     background: #688a7e;
 
     color: #fff;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.login-body {
-
-    background-color: #f1f2f7;
-
-}
-
-.login-img-body{
-
-  background: url('acel1.png') no-repeat center center fixed; 
-
-  -webkit-background-size: cover;
-
-  -moz-background-size: cover;
-
-  -o-background-size: cover;
-
-  background-size: cover;
-
-}
-
-.login-img2-body{
-
-  background: url('acel1.png') no-repeat center center fixed; 
-
-  -webkit-background-size: cover;
-
-  -moz-background-size: cover;
-
-  -o-background-size: cover;
-
-  background-size: cover;
 
 }
 
