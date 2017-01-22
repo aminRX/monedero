@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20170122000755) do
     t.string   "phone_model"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "clients_id"
-    t.index ["clients_id"], name: "index_client_profiles_on_clients_id", using: :btree
+    t.integer  "client_id"
+    t.index ["client_id"], name: "index_client_profiles_on_client_id", using: :btree
   end
 
   create_table "clients", force: :cascade do |t|
@@ -46,6 +46,6 @@ ActiveRecord::Schema.define(version: 20170122000755) do
     t.index ["userid"], name: "index_users_on_userid", unique: true, using: :btree
   end
 
-  add_foreign_key "client_profiles", "clients", column: "clients_id"
+  add_foreign_key "client_profiles", "clients"
   add_foreign_key "clients", "users"
 end
