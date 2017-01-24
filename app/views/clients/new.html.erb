@@ -1,30 +1,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-           
 <div class="container-fluid">
   <div class="row-fluid">
-                  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <h1 class="page-header">Monedero Electronico Alta</h1>
-
-
-
-                <h2 class="sub-header">Usuarios Nuevos</h2> 
-                <div class="table-responsive">
-                      <thead>
-
-    <div class="login-container">
-  <%= form_for :client, url: clients_path do |f| %>
-    <%= f.label :client_number, class:'form-control input-group pull-left' %>
-    <%= f.text_field :client_number, class:'form-control' %>
-    <%= f.submit "Create", class: 'btn btn-primary btn-lg btn-block' %>
-  <% end %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Monedero Electronico Alta</h
+         <h2 class="sub-header">Usuarios Nuevos</h2> 
+         <div class="table-responsive">
+          <thead>
+            <div class="login-container">
+                <%= form_for :client, url: clients_path do |f| %>
+                  <%= f.label :client_number, class:'form-control input-group pull-left' %>
+                  <%= f.text_field :client_number, class:'form-control' %>
+                  <%= f.submit "Create", class: 'btn btn-primary btn-lg btn-block' %>
+                <% end %>
+            </div>                     
+       </div>
+   </div>
+  </div>
 </div>
-                      
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
 </thead>
 </table>
 

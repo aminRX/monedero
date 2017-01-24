@@ -38,50 +38,35 @@ background-size: 100% 100%;
 .titlesection {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
-
   color: #fff;
   text-align: center;
 
 }
 
 .login-form {
-
     max-width: 350px;
-
     margin: 200px auto 0;
-
     background: #d5d7de; 
 }
 
 .login-img-body .login-form{
-
-    max-width: 350px;
-
-    margin: 200px auto 0;
-
-    background: rgba(213,215,222,0.4);
-
-    border: 1px solid #B0B6BE;
+max-width: 350px;
+margin: 200px auto 0;
+background: rgba(213,215,222,0.4);
+border: 1px solid #B0B6BE;
 }
 
 .login-img3-body .login-form{
-
     border: 1px solid #B0B6BE;
-
     background: rgba(213,215,222,0.9);
 }
 
-
-
 .login-form .form-control:focus {
-
     z-index: 2;
 }
 
 .login-form .input-group{
-
     padding-bottom: 15px;
-
 }
 
 .login-form .input-group-addon{
@@ -117,104 +102,67 @@ background-size: 100% 100%;
 }
 
 .login-form input[type="text"], .login-form input[type="password"] {    
-
     border: none;
-
     box-shadow: none;
-
     font-size: 16px;
-
     border-radius: 0; 
-
 }
 
 .login-form .btn{
-
     border-radius: 0;
-
 }
 
 .login-form .btn-login {
-
     background: #f67a6e;
-
     color: #fff;
-
     text-transform: uppercase;
-
     font-weight: 300;
-
     font-family: 'Lato', sans-serif;
-
     box-shadow: 0 4px #e56b60;
-
     margin-bottom: 20px;
-
 }
 
 
 
 .login-form p {
-
-    text-align: center;
-
-    color: #b6b6b6;
-
-    font-size: 16px;
-
-    font-weight: 300;
-
+text-align: center;
+color: #b6b6b6;
+font-size: 16px;
+font-weight: 300;
 }
 
 .login-img3-body .login-form p,.login-img2-body .login-form p {
-
-    color: #34aadc;
+color: #34aadc;
 
 }
 
 .login-form a {
-
     color: #b6b6b6;
-
 }
 
 
 
 .login-form a:hover {
-
     color: #34aadc;
-
 }
 
 .form .required{
-
     font-size: 16px;
-
-
     color: #00a0df;
 }
 
 
 input:focus, textarea:focus { outline: none; }
-
 table tr th { color: #688a7e;}
-
 *:focus {outline: none;}
-
 ::selection {
-
     background: #688a7e;
-
     color: #fff;
-
 }
 
 ::-moz-selection {
-
     background: #688a7e;
-
     color: #fff;
-
 }
 
 
