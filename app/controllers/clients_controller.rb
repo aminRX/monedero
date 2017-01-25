@@ -30,6 +30,17 @@ class ClientsController < ApplicationController
     end
   end
 
+  def search
+    user = current_user
+    if user
+      client = user.clients.where(client_params).take
+      if client
+        redirect_to client_path(client.id)
+      else
+      end
+    end
+  end
+
   def client_params
     params.require(:client).permit(:client_number)
   end

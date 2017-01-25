@@ -1,5 +1,5 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<h1>Monedero Electronico</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<%= form_for :client, url: clients_search_path do |f| %>
+  <%= f.label :client_number %>:
+  <%= f.text_field :client_number %><br />
+  <%= f.submit "Buscar" %>
+<% end %>
