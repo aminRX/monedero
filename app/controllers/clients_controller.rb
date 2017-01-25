@@ -2,12 +2,16 @@ class ClientsController < ApplicationController
   before_action :login
 
   def new
+    user = current_user
+    @client = user.clients.new
   end
 
   def create
     @user = current_user
     if @user
-      client = @user.clients.create client_params
+      client = @user.clients.new client_params
+      client.client_profile_attributes = client_profile
+      client.save
       redirect_to clients_path + "/#{client.id}"
     end
   end
@@ -21,5 +25,9 @@ class ClientsController < ApplicationController
 
   def client_params
     params.require(:client).permit(:client_number)
+  end
+
+  def client_profile
+    params.require(:client_profile).permit(:name, :phone, :phone_model, :birthdate)
   end
 end
