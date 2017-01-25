@@ -23,6 +23,13 @@ class ClientsController < ApplicationController
     end
   end
 
+  def index
+    user = current_user
+    if user
+      @clients = user.clients
+    end
+  end
+
   def client_params
     params.require(:client).permit(:client_number)
   end

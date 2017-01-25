@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [ :create ]
 
-  resources :clients, only: [ :show, :new, :create ]
+  resources :clients, only: [ :show, :new, :create, :index ]
 end
