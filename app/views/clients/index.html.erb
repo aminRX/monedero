@@ -1,0 +1,18 @@
+<table class="table">
+  <tr>
+    <th>Numero de cliente</th>
+    <th>Nombre</th>
+    <th>Telefono</th>
+    <th>Modelo de telefono</th>
+    <th>Fecha de nacimiento</th>
+  </tr>
+  <% @clients.each do |client| %>
+    <tr>
+      <td><%= client.client_number %></td>
+      <td><%= client.client_profile.name %></td>
+      <td><%= client.client_profile.phone %></td>
+      <td><%= client.client_profile.phone_model %></td>
+      <td><%= client.client_profile.birthdate %></td>
+    </tr>
+  <% end %>
+</table>
