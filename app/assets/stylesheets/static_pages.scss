@@ -1,11 +1,18 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#header.fixed {
-  position: fixed;
-  top: 0;
+.navbar-fixed-top {
+    border: 0;
+    background-color: #0D47A1;
+    color: #fff;
 }
-
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+inverse .navbar-nav>li>a:hover {
+    color: #fff;
+    background-color: transparent;
+}
 .sidebar {
     position: fixed;
     top: 51px;
@@ -21,8 +28,11 @@
     color: #fff;
 }
 
-.nav>li>a {
+.nav>li>a :hover {
     position: relative;
     display: block;
-    padding: 10px 15px;
+    font-size: 14px;
+    color: #fff;  
+      
+
 }
