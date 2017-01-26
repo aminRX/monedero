@@ -1,15 +1,12 @@
-<<<<<<< HEAD
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="container-fluid">
   <div class="row-fluid">
       <div class="col-md-4">
-=======
 <% if flash[:not_found] %>
   <div class="alert alert-warning">
     <strong><%= flash[:not_found] %></strong>
   </div>
 <% end %>
->>>>>>> 1139fb0fbafbf8da5d3de4b714c87956f8a1f12a
 <%= form_for :client, url: clients_search_path do |f| %>
   <%= f.label :client_number, "Numero de Cliente"%>
   <%= f.text_field :client_number, class: 'form-control form-group' %><br />
