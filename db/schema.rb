@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125042247) do
+ActiveRecord::Schema.define(version: 20170126044906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "balances", force: :cascade do |t|
+    t.float    "point"
+    t.integer  "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_balances_on_client_id", using: :btree
+  end
 
   create_table "client_profiles", force: :cascade do |t|
     t.string   "name"
@@ -45,6 +53,7 @@ ActiveRecord::Schema.define(version: 20170125042247) do
     t.index ["userid"], name: "index_users_on_userid", unique: true, using: :btree
   end
 
+  add_foreign_key "balances", "clients"
   add_foreign_key "client_profiles", "clients"
   add_foreign_key "clients", "users"
 end
