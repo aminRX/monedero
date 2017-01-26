@@ -1,15 +1,19 @@
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
 <%= form_for @client do |f| %>
-  <%= f.label :client_number %>
-  <%= f.text_field :client_number %>
+  <%= f.label :client_number, "Numero de cliente" %>
+  <%= f.text_field :client_number, class:'form-control'  %>
   <%= fields_for :client_profile do |client_profile_fields| %>
-    <%= client_profile_fields.label :name %>
-    <%= client_profile_fields.text_field :name %>
-    <%= client_profile_fields.label :birthdate %>
-    <%= client_profile_fields.date_field :birthdate %>
-    <%= client_profile_fields.label :phone %>
-    <%= client_profile_fields.text_field :phone %>
-    <%= client_profile_fields.label :phone_model %>
-    <%= client_profile_fields.text_field :phone_model %>
+    <%= client_profile_fields.label :name, "Nombre" %>
+    <%= client_profile_fields.text_field :name, class:'form-control input-group'%>
+    <%= client_profile_fields.label :birthdate, "Fecha de Nacimiento" %>
+    <%= client_profile_fields.date_field :birthdate, class:'form-control'%>
+    <%= client_profile_fields.label :phone, "Telefono" %>
+    <%= client_profile_fields.text_field :phone, class:'form-control'%>
+    <%= client_profile_fields.label :phone_model, "Modelo de Telefono"%>
+    <%= client_profile_fields.text_field  :phone_model, class:'form-control'%>
   <% end %>
-  <%= f.submit %>
+  <%= f.submit "Crear nuevo usuario", class:'btn btn-primary' %>
 <% end %>
+</div>
+
