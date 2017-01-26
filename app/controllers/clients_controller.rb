@@ -37,6 +37,8 @@ class ClientsController < ApplicationController
       if client
         redirect_to client_path(client.id)
       else
+        flash[:not_found] = "Not found"
+        redirect_to root_path
       end
     end
   end
