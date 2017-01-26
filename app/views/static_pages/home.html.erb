@@ -1,5 +1,12 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container-fluid">
+  <div class="row-fluid">
+      <div class="col-md-4">
 <%= form_for :client, url: clients_search_path do |f| %>
-  <%= f.label :client_number, "Numero de Cliente" %>:
-  <%= f.text_field :client_number, class: 'form-control' %><br />
+  <%= f.label :client_number, "Numero de Cliente"%>
+  <%= f.text_field :client_number, class: 'form-control form-group' %><br />
   <%= f.submit "Buscar", class:'btn btn-primary' %>
 <% end %>
+      </div>
+  </div>
+</div>
