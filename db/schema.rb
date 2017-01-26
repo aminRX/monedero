@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20170126044906) do
 
   create_table "balances", force: :cascade do |t|
     t.float    "point"
-    t.integer  "user_id"
+    t.integer  "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_balances_on_user_id", using: :btree
+    t.index ["client_id"], name: "index_balances_on_client_id", using: :btree
   end
 
   create_table "client_profiles", force: :cascade do |t|
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20170126044906) do
     t.index ["userid"], name: "index_users_on_userid", unique: true, using: :btree
   end
 
-  add_foreign_key "balances", "users"
+  add_foreign_key "balances", "clients"
   add_foreign_key "client_profiles", "clients"
   add_foreign_key "clients", "users"
 end
