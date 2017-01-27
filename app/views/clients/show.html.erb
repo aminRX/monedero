@@ -36,4 +36,21 @@
       </div>
     </div>
   </div>
+  <h3><%= @point_number %></h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Point</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @balances.each do |balance| %>
+        <tr>
+          <td><%= balance.point %></td>
+          <td><%= balance.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

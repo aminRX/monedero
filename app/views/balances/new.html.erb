@@ -6,6 +6,6 @@
 
 <%= form_for :balance, url: client_balances_path do |f| %>
   <%= f.label :point %>
-  <%= f.text_field :point %>
+  <%= f.number_field :point %>
   <%= f.submit %>
 <% end %>
