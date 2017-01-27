@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [ :create ]
 
-  resources :clients, only: [ :show, :new, :create, :index ]
+  resources :clients, only: [ :show, :new, :create, :index ] do
+    resources :balances, only: [ :new, :create ]
+  end
 end
