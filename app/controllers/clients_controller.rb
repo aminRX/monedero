@@ -20,6 +20,7 @@ class ClientsController < ApplicationController
     user = current_user
     if user
       @client = user.clients.find_by_id(params[:id])
+      @client_profile = @client.client_profile
     end
   end
 
