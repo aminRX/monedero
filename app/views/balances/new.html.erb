@@ -1,2 +1,11 @@
-<h1>Balances#new</h1>
-<p>Find me in app/views/balances/new.html.erb</p>
+<% if flash[:invalid] %>
+  <div class="alert alert-warning">
+    <strong>Campos invalidos</strong>
+  </div>
+<% end %>
+
+<%= form_for :balance, url: client_balances_path do |f| %>
+  <%= f.label :point %>
+  <%= f.text_field :point %>
+  <%= f.submit %>
+<% end %>
