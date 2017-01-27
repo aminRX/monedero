@@ -53,4 +53,16 @@ class ClientsController < ApplicationController
   def client_profile
     params.require(:client_profile).permit(:name, :phone, :phone_model, :birthdate)
   end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation)
+end
+
 end
