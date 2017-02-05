@@ -1,2 +1,23 @@
-<h1>Vendors#index</h1>
-<p>Find me in app/views/vendors/index.html.erb</p>
+<% if flash[:vendor_created] %>
+  <div class="alert alert-success">
+    <strong><%= flash[:vendor_created] %></strong>
+  </div>
+<% end %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor[:name] %></td>
+        <td>Editar</td>
+        <td>Borrar</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

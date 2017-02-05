@@ -17,6 +17,7 @@ class VendorsController < ApplicationController
   end
 
   def index
+    @vendors = current_user.vendors
   end
 
   def edit
