@@ -34,8 +34,10 @@
               </tr>
             </tbody>
           </table>
-          <%= link_to "Agregar puntos", new_client_balance_path(@client.id), class:'btn btn-primary form-control' %>
-          <a href="#" class="btn btn-warning">Eliminar puntos</a>
+          <%= link_to "Agregar puntos.", new_client_balance_path(@client.id), class:'btn btn-primary form-control' %>
+          <% if @point_number > 0 %>
+            <%= link_to "Utilizar puntos.", client_balances_use_new_path(@client.id), class:'btn btn-primary form-control' %>
+          <% end %>
         </div>
       </div>
     </div>

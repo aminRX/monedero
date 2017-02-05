@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :sessions, only: [ :create ]
 
   resources :clients, only: [ :show, :new, :create, :index, :edit, :update] do
+    get '/balances/use_new', to: 'balances#use_new'
+    post '/balances/use_create', to: 'balances#use_create'
     resources :balances, only: [ :new, :create ]
   end
 end

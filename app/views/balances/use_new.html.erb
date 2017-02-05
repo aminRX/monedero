@@ -1,4 +1,5 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h2>Usa los puntos del usuario de: <%= @client_profile[:name] %></h2>
+<p>Cantidad total de puntos: <%= @point_number %></p>
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="col-md-5  toppad  pull-left col-md-offset-3 ">
@@ -6,15 +7,15 @@
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
       <div class="panel panel-info">
         <div class="panel-heading">
-          <% if flash[:invalid] %>
-            <div class="alert alert-warning">
-              <strong>Campos invalidos</strong>
+          <% if flash[:insufficient_money] %>
+            <div class="alert alert-danger">
+              <strong>Puntos insuficientes</strong>
             </div>
           <% end %>
-          <%= form_for :balance, url: client_balances_path do |f| %>
+          <%= form_for :balance, url: client_balances_use_create_path do |f| %>
             <%= f.label :point, "Puntos", class:'form-control'  %>
             <%= f.number_field :point %>
-            <%= f.submit "Agregar puntos", class:'btn btn-primary' %>
+            <%= f.submit "Usar puntos", class:'btn btn-primary' %>
           <% end %>
         </div>
       </div>
