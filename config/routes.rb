@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   root :to => "static_pages#home"
 
+  resources :vendors, except: :show
+
   resources :sessions, only: [ :create ]
 
   resources :clients, only: [ :show, :new, :create, :index, :edit, :update] do
