@@ -15,8 +15,8 @@
     <% @vendors.each do |vendor| %>
       <tr>
         <td><%= vendor[:name] %></td>
-        <td>Editar</td>
-        <td>Borrar</td>
+        <td><%= link_to "Editar", edit_vendor_path(vendor[:id]) %></td>
+        <td><%= link_to "Eliminar", vendor_path(vendor[:id]), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
