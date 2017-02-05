@@ -1,5 +1,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="container-fluid">
+  <% if flash[:used_points] %>
+    <div class="alert alert-success">
+      <strong><%= flash[:used_points] %></strong>
+    </div>
+  <% end %>
   <div class="row-fluid">
     <div class="col-md-5  toppad  pull-left col-md-offset-3 ">
     </div>

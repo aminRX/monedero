@@ -36,7 +36,7 @@ class BalancesController < ApplicationController
       balance = balances.new({ point: - points })
       if balances.sufficient_balance?(points)
         if balance.save
-          flash[:points]
+          flash[:used_points] = "Puntos utilizados: #{points}"
           redirect_to client_path(params[:client_id])
         else
           flash[:invalid]
