@@ -3,6 +3,21 @@
     <strong><%= flash[:vendor_created] %></strong>
   </div>
 <% end %>
+<% if flash[:success_update] %>
+  <div class="alert alert-success">
+    <strong><%= flash[:success_update] %></strong>
+  </div>
+<% end %>
+<% if flash[:success_delete] %>
+  <div class="alert alert-success">
+    <strong><%= flash[:success_delete] %></strong>
+  </div>
+<% end %>
+<% if flash[:error_delete] %>
+  <div class="alert alert-success">
+    <strong><%= flash[:error_delete] %></strong>
+  </div>
+<% end %>
 <table class="table">
   <thead>
     <tr>

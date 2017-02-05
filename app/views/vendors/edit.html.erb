@@ -1,2 +1,12 @@
-<h1>Vendors#edit</h1>
-<p>Find me in app/views/vendors/edit.html.erb</p>
+<% if flash[:error_update] %>
+  <div class="alert alert-danger">
+    <strong>Se necesita ingresar el nombre.</strong>
+  </div>
+<% end %>
+<%= form_for @vendor, method: :put do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, html: {class: "form-control"} %>
+  </div>
+  <%= f.submit class: "btn btn-default" %>
+<% end %>

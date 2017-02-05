@@ -17,21 +17,42 @@ class VendorsController < ApplicationController
   end
 
   def index
-    @vendors = current_user.vendors
+    @vendors = active_vendors
   end
 
   def edit
+    @vendor = current_user.vendors.find params[:id]
   end
 
   def update
+    @vendor = current_user.vendors.find params[:id]
+    if @vendor.update_attributes(vendor_params)
+      flash[:success_update] = "Vendedor #{@vendor[:name]} modificado."
+      redirect_to vendors_path
+    else
+      flash[:error_update] = "Vendedor no se pudo modificar"
+      redirect_to edit_vendor_path
+    end
   end
 
   def destroy
+    @vendor = current_user.vendors.find params[:id]
+    if @vendor.update_attributes({ archived: true})
+      flash[:success_delete] = "Vendedor #{@vendor[:name]} eliminado."
+      redirect_to vendors_path
+    else
+      flash[:error_delete] = "Vendedor no se pudo eliminar."
+      redirect_to vendors_path
+    end
   end
 
   private
 
   def vendor_params
     params.require(:vendor).permit(:name)
+  end
+
+  def active_vendors
+    @vendors = current_user.vendors.where(archived: false)
   end
 end
