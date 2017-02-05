@@ -1,2 +1,10 @@
-<h1>Vendors#new</h1>
-<p>Find me in app/views/vendors/new.html.erb</p>
+<% if flash[:vendor_error] %>
+  <div class="alert alert-danger">
+    <strong>Se necesita ingresar el nombre:</strong>
+  </div>
+<% end %>
+<%= form_for @vendor do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+  <%= f.submit %>
+<% end %>
