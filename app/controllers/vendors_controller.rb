@@ -26,7 +26,7 @@ class VendorsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
   end
 
   private
