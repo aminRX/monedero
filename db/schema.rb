@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206202601) do
+ActiveRecord::Schema.define(version: 20170206231622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,9 +18,11 @@ ActiveRecord::Schema.define(version: 20170206202601) do
   create_table "balances", force: :cascade do |t|
     t.float    "point"
     t.integer  "client_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "percent_catalog_id"
     t.index ["client_id"], name: "index_balances_on_client_id", using: :btree
+    t.index ["percent_catalog_id"], name: "index_balances_on_percent_catalog_id", using: :btree
   end
 
   create_table "branch_offices", force: :cascade do |t|
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(version: 20170206202601) do
   end
 
   add_foreign_key "balances", "clients"
+  add_foreign_key "balances", "percent_catalogs"
   add_foreign_key "branch_offices", "users"
   add_foreign_key "client_profiles", "clients"
   add_foreign_key "clients", "users"
