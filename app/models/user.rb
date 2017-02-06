@@ -3,5 +3,5 @@ class User < ApplicationRecord
   has_secure_password
   has_many :clients
   has_many :vendors
-  has_one :branch_office
+  belongs_to :branch_office
 end
