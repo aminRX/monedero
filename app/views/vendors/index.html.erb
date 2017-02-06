@@ -21,7 +21,8 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Username</th>
+      <th>Nombre</th>
+      <th>Correo</th>
       <th></th>
       <th></th>
     </tr>
@@ -30,6 +31,7 @@
     <% @vendors.each do |vendor| %>
       <tr>
         <td><%= vendor[:name] %></td>
+        <td><%= vendor[:email] %></td>
         <td><%= link_to "Editar", edit_vendor_path(vendor[:id]) %></td>
         <td><%= link_to "Eliminar", vendor_path(vendor[:id]), method: :delete %></td>
       </tr>
