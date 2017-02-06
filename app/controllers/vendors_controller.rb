@@ -37,7 +37,7 @@ class VendorsController < ApplicationController
 
   def destroy
     @vendor = current_user.vendors.find params[:id]
-    if @vendor.update_attributes({ archived: true})
+    if @vendor.update_attribute(:archived, true)
       flash[:success_delete] = "Vendedor #{@vendor[:name]} eliminado."
       redirect_to vendors_path
     else
