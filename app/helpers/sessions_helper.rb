@@ -16,11 +16,11 @@ module SessionsHelper
   end
 
   def is_admin?
-
+    current_user.role[:name] == 'admin' ? true : false
   end
 
   def is_branch_office?
-
+    current_user.role[:name] == 'branch_office' ? true : false
   end
 
   def login
