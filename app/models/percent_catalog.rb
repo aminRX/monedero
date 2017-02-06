@@ -1,0 +1,2 @@
+class PercentCatalog < ApplicationRecord
+end

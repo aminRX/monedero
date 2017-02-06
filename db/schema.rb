@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206054659) do
+ActiveRecord::Schema.define(version: 20170206202601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(version: 20170206054659) do
     t.integer  "user_id"
     t.index ["client_number"], name: "index_clients_on_client_number", unique: true, using: :btree
     t.index ["user_id"], name: "index_clients_on_user_id", using: :btree
+  end
+
+  create_table "percent_catalogs", force: :cascade do |t|
+    t.float    "percent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["percent"], name: "index_percent_catalogs_on_percent", unique: true, using: :btree
   end
 
   create_table "roles", force: :cascade do |t|
