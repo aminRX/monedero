@@ -15,6 +15,14 @@ module SessionsHelper
    cookies.delete :auth_token
   end
 
+  def is_admin?
+
+  end
+
+  def is_branch_office?
+
+  end
+
   def login
     if !sign_in?
       redirect_to sign_in_path
