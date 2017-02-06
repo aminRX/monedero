@@ -1,5 +1,6 @@
 class Vendor < ApplicationRecord
   belongs_to :user
+  has_many :balances
   validates :name, presence: true
   validates :email,
             presence: true,
