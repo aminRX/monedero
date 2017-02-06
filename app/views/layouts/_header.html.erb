@@ -8,7 +8,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "AhorroCel Sucursal x", root_path, class: "navbar-brand" %>
+      <% if current_branch_office[:name] %>
+        <%= link_to current_branch_office[:name], root_path, class: "navbar-brand" %>
+      <% else %>
+        <%= link_to "Sucursal anonima", root_path, class: "navbar-brand" %>
+      <% end %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
