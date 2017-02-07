@@ -1,3 +1,3 @@
 class PercentCatalog < ApplicationRecord
-  has_many :balances
+  has_many :balance_informations
 end
