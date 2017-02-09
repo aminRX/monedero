@@ -7,153 +7,116 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-.session-background-image {
-background: #01579B;
-background-size: 100% 100%;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-.login-container {
- padding: 30px;
- padding-top: 30px;
-  max-width: 300px;
-  margin: 200px auto;
-  background-size: 100% 100%;
-  background-color: #D9D0DE;
-  border-radius: 2px;
-  overflow: hidden;
-  font-family: roboto;
-  }
-.titlesection {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  color: #fff;
-  text-align: center;
-}
 
-.login-form {
-    max-width: 350px;
-    margin: 200px auto 0;
-    background: #d5d7de; 
-}
-.login-img-body .login-form{
-max-width: 350px;
-margin: 200px auto 0;
-background: rgba(213,215,222,0.4);
-border: 1px solid #B0B6BE;
-}
-.login-img3-body .login-form{
-    border: 1px solid #B0B6BE;
-    background: rgba(213,215,222,0.9);
-}
-
-.login-form .form-control:focus {
-    z-index: 2;
-}
-
-.login-form .input-group{
-    padding-bottom: 15px;
-}
-
-.login-form .input-group-addon{
-    padding: 6px 12px;
-    font-size: 16px;
-    color: #8b9199;
-    font-weight: normal;
-    line-height: 1;
-    text-align: center;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 0;
-}
-.login-form .login-img{
-    font-size: 50px;
-    font-weight: 300;    
-}
-
-.login-form .input-group{
-    padding-bottom: 15px;
-}
-
-.login-form .input-group-addon{
-    padding: 6px 12px;
-    font-size: 16px;
-    color: #8b9199;
-    font-weight: normal;
-    line-height: 1;
-    text-align: center;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 0;
-}
-
-.login-form input[type="text"], .login-form input[type="password"] {    
-    border: none;
-    box-shadow: none;
-    font-size: 16px;
-    border-radius: 0; 
-}
-
-.login-form .btn{
-    border-radius: 0;
-}
-
-.login-form .btn-login {
-    background: #f67a6e;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-family: 'Lato', sans-serif;
-    box-shadow: 0 4px #e56b60;
-    margin-bottom: 20px;
-}
-
-
-
-.login-form p {
-text-align: center;
-color: #b6b6b6;
-font-size: 16px;
-font-weight: 300;
-}
-
-.login-img3-body .login-form p,.login-img2-body .login-form p {
-color: #34aadc;
-
-}
-
-.login-form a {
-    color: #b6b6b6;
-}
-
-
-
-.login-form a:hover {
-    color: #34aadc;
-}
-
-.form .required{
-    font-size: 16px;
-    color: #00a0df;
-}
-
-
-input:focus, textarea:focus { outline: none; }
-table tr th { color: #688a7e;}
-*:focus {outline: none;}
-::selection {
-    background: #688a7e;
-    color: #fff;
-}
-
-::-moz-selection {
-    background: #688a7e;
-    color: #fff;
-}
-
-
-
-
-
-
+            .session-background-image {
+              background-image: url('telcel.jpg');
+              background-size: 100% 100%;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+            }
+            .login-container{
+              position: relative;
+              width: 300px;
+              margin: 80px auto;
+              padding: 20px 40px 40px;
+              text-align: center;
+              background:#e0e0e0;
+              border: 1px solid #ccc;
+            }
+            #output{
+              position: absolute;
+              width: 300px;
+              top: -75px;
+              left: 0;
+              color: #fff;
+            }
+            #output.alert-success{
+              background: rgb(25, 204, 25);
+            }
+            #output.alert-danger{
+              background: rgb(228, 105, 105);
+            }
+            .login-container::before,.login-container::after{
+              content: "";
+              position: absolute;
+              width: 100%;height: 100%;
+              top: 3.5px;left: 0;
+              background: #fff;
+              z-index: -1;
+              -webkit-transform: rotateZ(4deg);
+              -moz-transform: rotateZ(4deg);
+              -ms-transform: rotateZ(4deg);
+              border: 1px solid #ccc;
+            }
+            .login-container::after{
+              top: 5px;
+              z-index: -2;
+              -webkit-transform: rotateZ(-2deg);
+              -moz-transform: rotateZ(-2deg);
+              -ms-transform: rotateZ(-2deg);
+            }
+            .avatar{
+              width: 100px;height: 100px;
+              margin: 10px auto 30px;
+              border-radius: 100%;
+              border: 2px solid #aaa;
+              background-image: url('boss.png');
+              background-size: cover;
+            }
+            .form-box input{
+              width: 100%;
+              padding: 10px;
+              text-align: center;
+              height:40px;
+              border: 1px solid #ccc;;
+              transition:0.2s ease-in-out;
+            }
+            .form-box input:focus{
+              outline: 0;
+              background: #eee;
+            }
+            .form-box input[type="text"]{
+              border-radius: 5px 5px 0 0;
+              text-transform: lowercase;
+            }
+            .form-box input[type="password"]{
+              border-radius: 0 0 5px 5px;
+              border-top: 0;
+            }
+            .form-box button.login{
+              margin-top:15px;
+              padding: 10px 20px;
+            }
+            .animated {
+              -webkit-animation-duration: 1s;
+              animation-duration: 1s;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+            }
+            @-webkit-keyframes fadeInUp {
+              0% {
+                opacity: 0;
+                -webkit-transform: translateY(20px);
+                transform: translateY(20px);
+              }
+              100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+              }
+            }
+            @keyframes fadeInUp {
+              0% {
+                opacity: 0;
+                -webkit-transform: translateY(20px);
+                -ms-transform: translateY(20px);
+                transform: translateY(20px);
+              }
+              100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+              }
+            }
