@@ -1,26 +1,25 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="container-fluid">
   <div class="row-fluid">
-      <div class="col-md-4">
-<%= form_for @client do |f| %>
-      <div class="table-responsive">
-  <%= f.label :client_number, "Numero de cliente" %>
-  <%= f.text_field :client_number, class:'form-control  form-group'  %>
-  <%= fields_for :client_profile do |client_profile_fields| %>
-    <%= client_profile_fields.label :name, "Nombre" %>
-    <%= client_profile_fields.text_field :name, class:'form-control form-group'%>
-    <%= client_profile_fields.label :birthdate, "Fecha de Nacimiento" %>
-    <%= client_profile_fields.date_field :birthdate, class:'form-control form-group'%>
-    <%= client_profile_fields.label :phone, "Telefono" %>
-    <%= client_profile_fields.text_field :phone, class:'form-control form-group'%>
-    <%= client_profile_fields.label :phone_model, "Modelo de Telefono"%>
-    <%= client_profile_fields.text_field  :phone_model, class:'form-control form-group'%>
-    <%= client_profile_fields.label :email, "Correo Electronico"%>
-    <%= client_profile_fields.email_field  :email, class:'form-control form-group'%> 
-  <% end %>
-  <%= f.submit "Crear nuevo usuario", class:'btn btn-primary' %>
-<% end %>
-      </div>
+    <div class="col-md-4">
+      <%= form_for @client do |f| %>
+        <div class="table-responsive">
+          <%= f.label :client_number, "Numero de cliente" %>
+          <%= f.text_field :client_number, class:'form-control  form-group'  %>
+          <%= fields_for :client_profile do |client_profile_fields| %>
+            <%= client_profile_fields.label :name, "Nombre" %>
+            <%= client_profile_fields.text_field :name, class:'form-control form-group'%>
+            <%= client_profile_fields.label :birthdate, "Fecha de Nacimiento" %>
+            <%= client_profile_fields.date_field :birthdate, class:'form-control form-group'%>
+            <%= client_profile_fields.label :phone, "Telefono" %>
+            <%= client_profile_fields.text_field :phone, class:'form-control form-group'%>
+            <%= client_profile_fields.label :phone_model, "Modelo de Telefono"%>
+            <%= client_profile_fields.text_field  :phone_model, class:'form-control form-group'%>
+            <%= client_profile_fields.label :email, "Correo Electronico"%>
+            <%= client_profile_fields.email_field  :email, class:'form-control form-group'%>
+          <% end %>
+          <%= f.submit "Crear nuevo usuario", class:'btn btn-primary' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

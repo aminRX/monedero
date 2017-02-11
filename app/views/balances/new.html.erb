@@ -1,4 +1,3 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="col-md-5  toppad  pull-left col-md-offset-3 ">
@@ -14,6 +13,24 @@
           <%= form_for :balance, url: client_balances_path do |f| %>
             <%= f.label :point, "Puntos", class:'form-control'  %>
             <%= f.number_field :point %>
+            <%= fields_for :balance_information do |balance_information_form| %>
+              <%= balance_information_form.label :amount, "Cantidad" %>
+              <%= balance_information_form.text_field :amount, class:'form-control'%>
+              <%= balance_information_form.label :note_number, "Nota de compra" %>
+              <%= balance_information_form.text_field :note_number, class:'form-control'%>
+            <% end %>
+            <%= fields_for :vendor do |vendor_form| %>
+              <%= vendor_form.label :vendor, "Vendedor" %>
+              <%= vendor_form.select :vendor,
+                @vendors.collect {|v| [ v.name, v.id ] },
+                class:'form-control' %>
+            <% end %>
+            <%= fields_for :percent_catalog do |percent_catalog_form| %>
+              <%= percent_catalog_form.label :percent, "Porcentaje" %>
+              <%= percent_catalog_form.select :percent,
+                @percent_catalogs.collect {|p| [ p.percent, p.id ] },
+                class:'form-control' %>
+            <% end %>
             <%= f.submit "Agregar puntos", class:'btn btn-primary' %>
           <% end %>
         </div>
