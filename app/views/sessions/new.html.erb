@@ -1,23 +1,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="session-background-image">
-<div class="login-container">
-  <div class="row justify-content-md-center ">
-    <div class=".col-md-4">
-      <div class="input-group">
-    <%= form_for :sessions, url: sessions_path do |f|  %>
+
+      
+      <div class="container">
+	<div class="login-container">
+            <div id="output"></div>
+            <div class="avatar"></div>
+            <div class="form-box">
+                    <%= form_for :sessions, url: sessions_path do |f|  %>
         <%= f.label  :userid, "Usuario", class: 'form-control input-group-addon icon_profile pull_right' %>
         <%= f.text_field  :userid, class:'form-control '%>
-      </div>
-           <div class="input-group">
             <%= f.label :password, "Contrasena", class:'form-control input-group-addon icon_profile  pull_right'  %>
             <%= f.password_field :password, class:'form-control input-group'%>
-      </div>
       <%= f.submit 'Entrar', class: 'btn btn-primary btn-lg btn-block' %>
        <% end %>
 
-     </div>
-   </div>  
-  </div>
- </div>
+                </form>
+            </div>
+        </div>
+        
 </div>
-      

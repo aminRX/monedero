@@ -53,7 +53,9 @@ ActiveRecord::Schema.define(version: 20170211074213) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "client_id"
+    t.string   "email"
     t.index ["client_id"], name: "index_client_profiles_on_client_id", using: :btree
+    t.index ["email"], name: "index_client_profiles_on_email", unique: true, using: :btree
   end
 
   create_table "clients", force: :cascade do |t|
@@ -85,6 +87,7 @@ ActiveRecord::Schema.define(version: 20170211074213) do
     t.string   "auth_token"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "roles_id"
     t.integer  "role_id"
     t.index ["auth_token"], name: "index_users_on_auth_token", unique: true, using: :btree
     t.index ["role_id"], name: "index_users_on_role_id", using: :btree
