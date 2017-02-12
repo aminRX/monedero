@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :vendors, except: :show
 
   resources :sessions, only: [ :create ]
-
+  resources :users, only: [ :show, :new, :create ]
   resources :clients, only: [ :show, :new, :create, :index, :edit, :update] do
     get '/balances/use_new', to: 'balances#use_new'
     post '/balances/use_create', to: 'balances#use_create'
