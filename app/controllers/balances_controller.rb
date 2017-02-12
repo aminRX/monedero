@@ -30,7 +30,7 @@ class BalancesController < ApplicationController
     user = current_user
 
     if user
-      @client = user.clients
+      @client = user.clients.find(params[:client_id])
       @client_profile = @client.client_profile
       @balances = @client.balances || []
       @point_number = @balances.sum(:point)
