@@ -1,0 +1,10 @@
+<h2>Crear sucursal</h2>
+<%= form_for @user do |f| %>
+  <%= f.label :userid %>:
+  <%= f.text_field :userid %><br />
+
+  <%= f.label :password %>:
+  <%= f.password_field :password %><br />
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,2 @@
+module PercentCatalogsHelper
+end
