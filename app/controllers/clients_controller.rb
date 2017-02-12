@@ -21,7 +21,7 @@ class ClientsController < ApplicationController
     if user
       @client = user.clients.find_by_id(params[:id])
       @client_profile = @client.client_profile
-      @balances = @client.balances || []
+      @balances = @client.balances.joins(:vendor) || []
       @point_number = @balances.sum(:point)
     end
   end
