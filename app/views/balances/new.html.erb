@@ -8,10 +8,6 @@
             </div>
           <% end %>
           <%= form_for :balance, url: client_balances_path do |f| %>
-          <div class="input-group form-control">
-            <%= f.label :point, "Puntos", class:'form-control'  %>
-            <%= f.number_field :point, class:'form-control' %> <br> 
-            </div>
             <div class="input-group form-control">            
             <%= fields_for :balance_information do |balance_information_form| %>
               <%= balance_information_form.label :amount, "Cantidad", class:'form-control' %> 

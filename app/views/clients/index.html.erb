@@ -5,6 +5,8 @@
     <th>Telefono</th>
     <th>Modelo de telefono</th>
     <th>Fecha de nacimiento</th>
+    <th>Correo Electronico</th>
+
   </tr>
   <% @clients.each do |client| %>
     <tr>
@@ -13,6 +15,8 @@
       <td><%= client.client_profile.phone %></td>
       <td><%= client.client_profile.phone_model %></td>
       <td><%= client.client_profile.birthdate %></td>
+      <td><%= client.client_profile.email %></td>
+      
     </tr>
   <% end %>
 </table>

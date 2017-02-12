@@ -51,7 +51,7 @@ class ClientsController < ApplicationController
   end
 
   def client_profile
-    params.require(:client_profile).permit(:name, :phone, :phone_model, :birthdate)
+    params.require(:client_profile).permit(:name, :phone, :phone_model, :birthdate, :email)
   end
 
   def edit
