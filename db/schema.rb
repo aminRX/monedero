@@ -53,7 +53,9 @@ ActiveRecord::Schema.define(version: 20170212025716) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "client_id"
+    t.string   "email"
     t.index ["client_id"], name: "index_client_profiles_on_client_id", using: :btree
+    t.index ["email"], name: "index_client_profiles_on_email", unique: true, using: :btree
   end
 
   create_table "clients", force: :cascade do |t|
