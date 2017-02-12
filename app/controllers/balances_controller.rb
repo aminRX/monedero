@@ -10,12 +10,17 @@ class BalancesController < ApplicationController
     @percent_catalog = PercentCatalog.find(percent_catalog_params[:percent])
     if user && @vendor && @percent_catalog
       client = user.clients.find_by_id params[:client_id]
-      balances = client.balances.new(add_points_params(@vendor, @percent_catalog))
+      add_points = add_points_params(@vendor, @percent_catalog)
+      balances = client.balances.new(add_points)
+      balances.calculate_points(
+        add_points[:balance_information_attributes][:amount],
+        add_points[:balance_information_attributes][:percent_catalog]
+      )
       if balances.save
-        flash[:points]
+        flash[:added_points] = "Se agregaron los puntos"
         redirect_to client_path(params[:client_id])
       else
-        flash[:invalid]
+        flash[:invalid_points] = "No se pudo agregar los puntos."
         redirect_to client_path(params[:client_id])
       end
     end
@@ -73,10 +78,10 @@ class BalancesController < ApplicationController
   end
 
   def add_points_params(vendor, percent_catalog)
-    result = {point: params[:balance][:point], vendor: vendor,
-              balance_information_attributes: {
-                amount: params[:balance_information][:amount],
-                note_number: params[:balance_information][:note_number],
-                percent_catalog: percent_catalog}}
+    {vendor: vendor,
+     balance_information_attributes: {
+       amount: params[:balance_information][:amount],
+       note_number: params[:balance_information][:note_number],
+       percent_catalog: percent_catalog}}
   end
 end

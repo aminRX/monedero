@@ -11,8 +11,6 @@
             </div>
           <% end %>
           <%= form_for :balance, url: client_balances_path do |f| %>
-            <%= f.label :point, "Puntos", class:'form-control'  %>
-            <%= f.number_field :point %>
             <%= fields_for :balance_information do |balance_information_form| %>
               <%= balance_information_form.label :amount, "Cantidad" %>
               <%= balance_information_form.text_field :amount, class:'form-control'%>
