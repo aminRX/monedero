@@ -28,12 +28,12 @@ class BalancesController < ApplicationController
 
   def use_new
     user = current_user
-
     if user
       @client = user.clients.find(params[:client_id])
       @client_profile = @client.client_profile
       @balances = @client.balances || []
       @point_number = @balances.sum(:point)
+      @vendors = current_user.vendors
     end
   end
 
@@ -43,7 +43,8 @@ class BalancesController < ApplicationController
       client = user.clients.find_by_id params[:client_id]
       points = balance_params[:point].to_i.abs
       balances = client.balances
-      balance = balances.new({ point: - points })
+
+      balance = balances.new({ point: - points, vendor_id: params[:vendor][:vendor] })
       if balances.sufficient_balance?(points)
         if balance.save
           flash[:used_points] = "Puntos utilizados: #{points}"
