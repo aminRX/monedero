@@ -60,6 +60,10 @@ class BalancesController < ApplicationController
     end
   end
 
+  def use_edit
+
+  end
+
   def destroy
     @client = Client.find(params[:client_id])
     @balance = Balance.find(params[:id])

@@ -1,0 +1,10 @@
+<h1>Editar puntos usados.</h1>
+<%= form_for :balance, url: use_points_path(@balance.id) do |f| %>
+  <%= f.label :point %>:
+  <%= f.number_field :point %><br />
+  <%= fields_for :vendor do |vendor_form| %>
+    <%= vendor_form.label :name, "Vendedor", class:'form-control' %>
+    <%= vendor_form.select :name, @vendors.collect {|v| [ v.name, v.id ] }, class:'form-control' %>
+  <% end %>
+  <%= f.submit "Editar" %>
+<% end %>

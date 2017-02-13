@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'use_points/new'
+
+  get 'use_points/create'
+
+  get 'use_points/edit'
+
+  get 'use_points/update'
+
   get '/sign_in', to: 'sessions#new'
 
   get '/sign_out', to: 'sessions#destroy'
@@ -12,6 +20,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [ :create ]
   resources :users, only: [ :show, :new, :create, :index ]
   resources :percent_catalogs, only: [ :show, :new, :create ]
+  resources :use_points, only: [ :new, :create, :edit, :update, :show ]
 
   resources :clients, only: [ :show, :new, :create, :index, :edit, :update] do
     get '/balances/use_new', to: 'balances#use_new'
