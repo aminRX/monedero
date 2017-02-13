@@ -1,0 +1,17 @@
+<%= form_for(balance_information) do |f| %>
+  <% if balance_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(balance_information.errors.count, "error") %> prohibited this balance_information from being saved:</h2>
+
+      <ul>
+      <% balance_information.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

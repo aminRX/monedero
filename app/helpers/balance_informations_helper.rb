@@ -1,0 +1,2 @@
+module BalanceInformationsHelper
+end

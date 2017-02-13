@@ -1,0 +1,29 @@
+<h1>Editing Balance Information</h1>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-md-5  toppad  pull-left col-md-offset-3 ">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+        <% if flash[:invalid] %>
+          <div class="alert alert-warning">
+            <strong>Campos invalidos</strong>
+          </div>
+        <% end %>
+        <%= form_for @balance_information, url: client_balance_balance_information_path, method: :put do |f| %>
+          <div class="input-group form-control">
+            <%= f.label :amount, "Cantidad", class: 'form-control' %>
+            <%= f.text_field :amount, class:'form-control'%>
+          </div>
+          <div class="input-group form-control">
+            <%= f.label :note_number, "Nota de venta", class: 'form-control' %>
+            <%= f.text_field :note_number, class:'form-control'%>
+          </div>
+          <%= fields_for @percent_catalog do |percent_catalog_form| %>
+            <br> <%= percent_catalog_form.label :percent, "Porcentaje" %> </br>
+            <%= percent_catalog_form.select :percent, @percent_catalogs.collect {|p| [ p.percent, p.id ] }, class:'form-control' %>
+          <% end %>
+          <%= f.submit "Editar"  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1 @@
+json.partial! "balance_informations/balance_information", balance_information: @balance_information

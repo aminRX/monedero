@@ -1,0 +1,8 @@
+<h2>El cliente <%= @client.client_number %> : </h2>
+<strong>Cantidad:</strong><p><%= @balance_information.amount %></p>
+<strong>Nota de compra:</strong><p><%= @balance_information.note_number %></p>
+<strong>Puntos:</strong><p><%= @balance.point %></p>
+<strong>Vendedor:</strong><p><%= @balance.vendor.name %></p>
+<strong>Porcentaje:</strong><p><%= @balance_information.percent_catalog.percent %></p>
+<%= link_to "Editar", edit_client_balance_balance_information_path(@client.id, @balance.id, @balance_information.id) %>
+<%= link_to "Eliminar", client_balance_balance_information_path(@client.id, @balance.id, @balance_information.id), :method => :delete %>
