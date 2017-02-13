@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20170213071714) do
     t.string   "auth_token"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "roles_id"
     t.integer  "role_id"
     t.index ["auth_token"], name: "index_users_on_auth_token", unique: true, using: :btree
     t.index ["role_id"], name: "index_users_on_role_id", using: :btree

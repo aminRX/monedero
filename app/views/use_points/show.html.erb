@@ -1,5 +1,10 @@
+<div class="container-fluid">
+<div class="row-fluid">
 <h2>Puntos usados</h2>
 <strong>Puntos utilizados</strong><p><%= @balance.point.to_f.abs %></p>
 <strong>Vendedor:</strong><p><%= @vendor.name  %></p>
 <%= link_to "Editar", edit_use_point_path(@balance.id) %>
 <%= link_to "Eliminar", client_balance_path(@client.id, @balance.id) %>
+</div>
+</div>
+
