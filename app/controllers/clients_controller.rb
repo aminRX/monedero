@@ -22,7 +22,7 @@ class ClientsController < ApplicationController
       @client = user.clients.find_by_id(params[:id])
       @client_profile = @client.client_profile
       @balances = @client.balances.joins(:vendor) || []
-      @point_number = @balances.sum(:point)
+      @point_number = @balances.where(archived: false).sum(:point)
     end
   end
 

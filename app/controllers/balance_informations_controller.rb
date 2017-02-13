@@ -64,10 +64,12 @@ class BalanceInformationsController < ApplicationController
   # DELETE /balance_informations/1
   # DELETE /balance_informations/1.json
   def destroy
-    @balance_information.destroy
-    respond_to do |format|
-      format.html { redirect_to balance_informations_url, notice: 'Balance information was successfully destroyed.' }
-      format.json { head :no_content }
+    @client = Client.find(params[:client_id])
+    @balance = Balance.find(params[:balance_id])
+    if @balance.update_attribute(:archived, true)
+      redirect_to client_path(@client.id)
+    else
+      render :show
     end
   end
 

@@ -5,4 +5,4 @@
 <strong>Vendedor:</strong><p><%= @balance.vendor.name %></p>
 <strong>Porcentaje:</strong><p><%= @balance_information.percent_catalog.percent %></p>
 <%= link_to "Editar", edit_client_balance_balance_information_path(@client.id, @balance.id, @balance_information.id) %>
-<%= link_to "Eliminar", client_balance_balance_information_path(@client.id, @balance.id, @balance_information.id), :method => :delete %>
+<%= link_to "Eliminar", client_balance_path(@client.id, @balance.id), :method => :delete %>

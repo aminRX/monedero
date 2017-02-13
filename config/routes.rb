@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :clients, only: [ :show, :new, :create, :index, :edit, :update] do
     get '/balances/use_new', to: 'balances#use_new'
     post '/balances/use_create', to: 'balances#use_create'
-    resources :balances, only: [ :new, :create ] do
+    resources :balances, only: [ :new, :create, :destroy ] do
         resources :balance_informations
     end
   end

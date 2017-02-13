@@ -60,6 +60,16 @@ class BalancesController < ApplicationController
     end
   end
 
+  def destroy
+    @client = Client.find(params[:client_id])
+    @balance = Balance.find(params[:id])
+    if @balance.update_attribute(:archived, true)
+      redirect_to client_path(@client.id)
+    else
+      render :show
+    end
+  end
+
   private
 
   def balance_params
