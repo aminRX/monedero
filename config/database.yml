@@ -19,4 +19,4 @@ production:
   <<: *default
   username: <%= ENV['APPNAME_DATABASE_USER'] %>
   password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
-  database: monedero_production
+  database: <%= ENV['APPNAME_DATABASE'] %>
