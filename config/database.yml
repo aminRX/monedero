@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  username: benitocamela
+  password: fuckyeah
+  database: monedero_development
+
+test:
+  <<: *default
+  username: benitocamela
+  password: fuckyeah
+  database: monedero_test
+
+production:
+  <<: *default
+  username: <%= ENV['APPNAME_DATABASE_USER'] %>
+  password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
+  database: <%= ENV['APPNAME_DATABASE'] %>
