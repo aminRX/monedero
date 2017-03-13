@@ -36,7 +36,7 @@ gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'unicorn'
-
+gem 'thin'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
