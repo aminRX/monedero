@@ -11,9 +11,9 @@
         <% end %>
         <% if is_admin? %>
           <li><%= link_to 'Registrar Sucursal', new_user_path %></li>
-          <li><%= link_to 'Ver usuarios', new_user_path %></li>
-          <li><%= link_to 'Agregar porcentajes', new_user_path %></li>
-          <li><%= link_to 'Ver porcentajes', new_user_path %></li>
+          <li><%= link_to 'Ver usuarios', users_path %></li>
+          <li><%= link_to 'Agregar porcentajes', new_percent_catalog_path %></li>
+          <li><%= link_to 'Ver porcentajes', percent_catalogs_path %></li>
         <% end %>
       </ul>
     </div>

@@ -12,32 +12,29 @@
 
 ActiveRecord::Schema.define(version: 20170213071714) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "balance_informations", force: :cascade do |t|
-    t.float    "amount"
+  create_table "balance_informations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.float    "amount",             limit: 24
     t.string   "note_number"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "percent_catalog_id"
     t.integer  "balance_id"
     t.index ["balance_id"], name: "index_balance_informations_on_balance_id", using: :btree
     t.index ["percent_catalog_id"], name: "index_balance_informations_on_percent_catalog_id", using: :btree
   end
 
-  create_table "balances", force: :cascade do |t|
-    t.float    "point"
+  create_table "balances", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.float    "point",      limit: 24
     t.integer  "client_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.integer  "vendor_id"
-    t.boolean  "archived",   default: false
+    t.boolean  "archived",              default: false
     t.index ["client_id"], name: "index_balances_on_client_id", using: :btree
     t.index ["vendor_id"], name: "index_balances_on_vendor_id", using: :btree
   end
 
-  create_table "branch_offices", force: :cascade do |t|
+  create_table "branch_offices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -46,7 +43,7 @@ ActiveRecord::Schema.define(version: 20170213071714) do
     t.index ["user_id"], name: "index_branch_offices_on_user_id", using: :btree
   end
 
-  create_table "client_profiles", force: :cascade do |t|
+  create_table "client_profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "phone"
     t.date     "birthdate"
@@ -59,7 +56,7 @@ ActiveRecord::Schema.define(version: 20170213071714) do
     t.index ["email"], name: "index_client_profiles_on_email", unique: true, using: :btree
   end
 
-  create_table "clients", force: :cascade do |t|
+  create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "client_number"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -68,21 +65,21 @@ ActiveRecord::Schema.define(version: 20170213071714) do
     t.index ["user_id"], name: "index_clients_on_user_id", using: :btree
   end
 
-  create_table "percent_catalogs", force: :cascade do |t|
-    t.float    "percent"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "percent_catalogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.float    "percent",    limit: 24
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.index ["percent"], name: "index_percent_catalogs_on_percent", unique: true, using: :btree
   end
 
-  create_table "roles", force: :cascade do |t|
+  create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       default: "branch_office", null: false
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
     t.index ["name"], name: "index_roles_on_name", unique: true, using: :btree
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "userid"
     t.string   "password_digest"
     t.string   "auth_token"
@@ -94,7 +91,7 @@ ActiveRecord::Schema.define(version: 20170213071714) do
     t.index ["userid"], name: "index_users_on_userid", unique: true, using: :btree
   end
 
-  create_table "vendors", force: :cascade do |t|
+  create_table "vendors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at",                 null: false
