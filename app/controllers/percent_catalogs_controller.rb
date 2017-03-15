@@ -1,6 +1,6 @@
 class PercentCatalogsController < ApplicationController
   def new
-    @PercentCatalog.new
+    PercentCatalog.new
   end
 
   def create
