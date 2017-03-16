@@ -1,0 +1,11 @@
+<table class="table">
+  <tr>
+    <th>Porcentaje</th>
+  </tr>
+  <% @percent_catalogs.each do |percent_catalog| %>
+    <tr>
+      <td><%= link_to percent_catalog.percent, percent_catalog_path(percent_catalog.id) %></td>
+      <td><%= percent_catalog.created_at %></td>
+    </tr>
+  <% end %>
+</table>
