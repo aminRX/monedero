@@ -31,8 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'mysql2', '>= 0.3.18', '< 0.5'
-
+gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'unicorn'
