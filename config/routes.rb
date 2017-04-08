@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   root :to => "static_pages#home"
 
   resources :vendors, except: :show
-
+  resources :cards
   resources :sessions, only: [ :create ]
   resources :users, only: [ :show, :new, :create, :index ]
   resources :percent_catalogs, only: [ :show, :new, :create, :index ]

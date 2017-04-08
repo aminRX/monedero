@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-md-4">
+      <%= form_for(card) do |f| %>
+        <div class="table-responsive">
+          <% if card.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+              <ul>
+                <% card.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :title, "Titulo" %>
+            <%= f.text_field :title, class:'form-control form-group' %>
+          </div>
+
+          <div class="field">
+            <%= f.label :percent, "Porcentaje" %>
+            <%= f.text_field :percent, class:'form-control form-group' %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Crear nueva tarjeta", class:'btn btn-primary' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
