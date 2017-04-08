@@ -1,5 +1,5 @@
 class BalanceInformation < ApplicationRecord
-  belongs_to :percent_catalog, optional: true
+  belongs_to :card, optional: true
   belongs_to :balance, optional: true
   after_validation :calculate_points, on: [:update]
 

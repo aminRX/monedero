@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408111437) do
+ActiveRecord::Schema.define(version: 20170408170508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 20170408111437) do
     t.datetime "updated_at",         null: false
     t.integer  "percent_catalog_id"
     t.integer  "balance_id"
+    t.integer  "card_id"
     t.index ["balance_id"], name: "index_balance_informations_on_balance_id", using: :btree
+    t.index ["card_id"], name: "index_balance_informations_on_card_id", using: :btree
     t.index ["percent_catalog_id"], name: "index_balance_informations_on_percent_catalog_id", using: :btree
   end
 
@@ -115,6 +117,7 @@ ActiveRecord::Schema.define(version: 20170408111437) do
   end
 
   add_foreign_key "balance_informations", "balances"
+  add_foreign_key "balance_informations", "cards"
   add_foreign_key "balance_informations", "percent_catalogs"
   add_foreign_key "balances", "clients"
   add_foreign_key "balances", "vendors"

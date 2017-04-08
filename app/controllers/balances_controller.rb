@@ -1,20 +1,20 @@
 class BalancesController < ApplicationController
   def new
-    @percent_catalogs = PercentCatalog.all
+    @percent_catalogs = current_user.cards
     @vendors = current_user.vendors
   end
 
   def create
     user = current_user
     @vendor = Vendor.find(vendor_params[:vendor])
-    @percent_catalog = PercentCatalog.find(percent_catalog_params[:percent])
+    @percent_catalog = user.cards.find(percent_catalog_params[:percent])
     if user && @vendor && @percent_catalog
       client = user.clients.find_by_id params[:client_id]
       add_points = add_points_params(@vendor, @percent_catalog)
       balances = client.balances.new(add_points)
       balances.calculate_points(
         add_points[:balance_information_attributes][:amount],
-        add_points[:balance_information_attributes][:percent_catalog]
+        add_points[:balance_information_attributes][:card]
       )
       if balances.save
         flash[:added_points] = "Se agregaron los puntos"
@@ -89,7 +89,7 @@ class BalancesController < ApplicationController
   end
 
   def percent_catalog_params
-    params.require(:percent_catalog).permit(:percent)
+    params.require(:card).permit(:percent)
   end
 
   def add_points_params(vendor, percent_catalog)
@@ -97,6 +97,6 @@ class BalancesController < ApplicationController
      balance_information_attributes: {
        amount: params[:balance_information][:amount],
        note_number: params[:balance_information][:note_number],
-       percent_catalog: percent_catalog}}
+       card: percent_catalog}}
   end
 end
