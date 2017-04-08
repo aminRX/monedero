@@ -44,7 +44,7 @@ class BalancesController < ApplicationController
       points = balance_params[:point].to_i.abs
       balances = client.balances
 
-      balance = balances.new({ point: - points, vendor_id: params[:vendor][:vendor] })
+      balance = balances.new(add_points_params_without_card(points))
       if balances.sufficient_balance?(points)
         if balance.save
           flash[:used_points] = "Puntos utilizados: #{points}"
@@ -98,5 +98,15 @@ class BalancesController < ApplicationController
        amount: params[:balance_information][:amount],
        note_number: params[:balance_information][:note_number],
        card: percent_catalog}}
+  end
+
+  def add_points_params_without_card(points)
+    {point: - points,
+     vendor_id: params[:vendor][:vendor],
+     balance_information_attributes: {
+       amount: params[:balance_information][:amount],
+       note_number: params[:balance_information][:note_number]
+     }
+    }
   end
 end
