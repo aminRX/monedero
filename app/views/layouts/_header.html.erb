@@ -9,14 +9,14 @@
         <span class="icon-bar"></span>
       </button>
       <% if is_branch_office? %>
-        <%= link_to 'branch office', root_path, class: "navbar-brand" %>
+        <%= link_to 'Sucursal', root_path, class: "navbar-brand" %>
       <% else %>
-        <%= link_to "Sucursal anonima", root_path, class: "navbar-brand" %>
+        <%= link_to "Administrador", root_path, class: "navbar-brand" %>
       <% end %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Sign Out", sign_out_path %></li>
+        <li><%= link_to "Salir", sign_out_path %></li>
       </ul>
       </form>
     </div>
