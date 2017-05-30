@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @user = User.find(params[:id])
   end
 
   def new
@@ -15,6 +16,10 @@ class UsersController < ApplicationController
       flash[:user_not_created] = "El usuario no pudo crearse"
       redirect_to new_user_path
     end
+  end
+
+  def index
+    @users = User.all
   end
 
   private

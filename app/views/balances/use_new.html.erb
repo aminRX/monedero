@@ -15,11 +15,21 @@
           <%= form_for :balance, url: client_balances_use_create_path do |f| %>
             <%= f.label :point, "Puntos", class:'form-control'  %>
             <%= f.number_field :point %>
-            <%= fields_for :vendor do |vendor_form| %>
-              <%= vendor_form.label :vendor, "Vendedor", class:'form-control' %>
-              <%= vendor_form.select :vendor, @vendors.collect {|v| [ v.name, v.id ] }, class:'form-control' %>
-            <% end %>
-            <%= f.submit "Usar puntos", class:'btn btn-primary' %>
+            <div class="input-group form-control">
+              <%= fields_for :balance_information do |balance_information_form| %>
+                <%= balance_information_form.label :amount, "Cantidad", class:'form-control' %>
+                <%= balance_information_form.text_field :amount, class:'form-control'%>
+            </div>
+            <div class="input-group form-control">
+              <%= balance_information_form.label :note_number, "Nota de venta", class: 'form-control' %>
+              <%= balance_information_form.text_field :note_number, class:'form-control'%>
+            </div>
+              <% end %>
+              <%= fields_for :vendor do |vendor_form| %>
+                <%= vendor_form.label :vendor, "Vendedor", class:'form-control' %>
+                <%= vendor_form.select :vendor, @vendors.collect {|v| [ v.name, v.id ] }, class:'form-control' %>
+              <% end %>
+              <%= f.submit "Usar puntos", class:'btn btn-primary' %>
           <% end %>
         </div>
       </div>

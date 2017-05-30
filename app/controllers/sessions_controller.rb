@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       flash[:joined] = 'Bienvenido'
       redirect_to sign_in_path
     else
-      flash[:error] =  "Incorrecto Email / Password"
+      flash[:error] =  "Incorrecto UserId / Password"
       redirect_to sign_in_path
     end
   end

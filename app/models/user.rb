@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :clients
   has_many :vendors
+  has_many :cards
   has_one :branch_office
   belongs_to :role, optional: true
 

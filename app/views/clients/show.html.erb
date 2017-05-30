@@ -65,7 +65,7 @@
         <% if !balance.archived %>
           <tr>
             <td><%= balance.point %></td>
-            <td><%= balance.created_at %></td>
+            <td><%= balance.created_at.strftime("%I:%M:%S%p %d-%m-%Y") %></td>
             <td><%= balance.vendor.name %></td>
             <% if balance.balance_information %>
               <td><%= link_to "Ver detalles.", client_balance_balance_information_path(@client.id, balance.id, balance.balance_information.id) %></td>

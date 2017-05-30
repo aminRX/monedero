@@ -1,0 +1,14 @@
+<table class="table">
+  <tr>
+    <th>Id de usuario</th>
+    <th>Fecha de creacion</th>
+  </tr>
+  <% @users.each do |user| %>
+    <% if user.role.name != 'admin' %>
+      <tr>
+        <td><%= link_to user.userid, user_path(user.id) %></td>
+        <td><%= user.created_at %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

@@ -6,7 +6,7 @@ class Balance < ApplicationRecord
   accepts_nested_attributes_for :balance_information
 
   def self.sufficient_balance?(points)
-    points <= self.sum(:point) ? true : false
+    points <= self.where(archived: false).sum(:point) ? true : false
   end
 
   def calculate_points(amount, percent_catalog)

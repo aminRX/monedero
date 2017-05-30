@@ -8,10 +8,12 @@
           <li><%= link_to 'Registrar cliente', new_client_path %></li>
           <li><%= link_to 'Ver Vendedores', vendors_path %></li>
           <li><%= link_to 'Registrar vendedor', new_vendor_path %></li>
+          <li><%= link_to 'Registrar Tarjeta', new_card_path %></li>
+          <li><%= link_to 'Ver tarjetas', cards_path %></li>
         <% end %>
         <% if is_admin? %>
           <li><%= link_to 'Registrar Sucursal', new_user_path %></li>
-          <li><%= link_to 'Ver usuarios', users_path %></li>
+          <li><%= link_to 'Ver sucursales', users_path %></li>
           <li><%= link_to 'Agregar porcentajes', new_percent_catalog_path %></li>
           <li><%= link_to 'Ver porcentajes', percent_catalogs_path %></li>
         <% end %>

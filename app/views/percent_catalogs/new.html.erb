@@ -1,2 +1,9 @@
-<h1>PercentCatalogs#new</h1>
-<p>Find me in app/views/percent_catalogs/new.html.erb</p>
+<h1>Crear porcentaje nuevo.</h1>
+<p>Crea tu porcentaje para tus cupones.</p>
+<spam>Ejemplo: porcentaje: 30.0</spam>
+
+<%= form_for @percent_catalog, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <%= f.label :percent %>
+  <%= f.text_field :percent %>
+  <%= f.submit "Agregar" %>
+<% end %>

@@ -14,7 +14,7 @@
       <td><%= client.client_profile.name %></td>
       <td><%= client.client_profile.phone %></td>
       <td><%= client.client_profile.phone_model %></td>
-      <td><%= client.client_profile.birthdate %></td>
+      <td><%= client.client_profile.birthdate.strftime("%d-%m-%Y") %></td>
       <td><%= client.client_profile.email %></td>
     </tr>
   <% end %>

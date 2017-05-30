@@ -7,33 +7,42 @@
             <strong>Campos invalidos</strong>
           </div>
         <% end %>
-        <%= form_for :balance, url: client_balances_path do |f| %>
-          <div class="input-group form-control">
-            <%= fields_for :balance_information do |balance_information_form| %>
-              <%= balance_information_form.label :amount, "Cantidad", class:'form-control' %>
-              <%= balance_information_form.text_field :amount, class:'form-control'%>
-          </div>
-          <div class="input-group form-control">
-            <%= balance_information_form.label :note_number, "Nota de venta", class: 'form-control' %>
-            <%= balance_information_form.text_field :note_number, class:'form-control'%>
-            <% end %>
-          </div>
-          <div class="input-group-addon form-control">
-            <table class="table table-responsive">
-              <%= fields_for :vendor do |vendor_form| %>
-                <%= vendor_form.label :vendor, "Vendedor", class:'form-control' %>
-                <%= vendor_form.select :vendor,@vendors.collect {|v| [ v.name, v.id ] }, class:'form-control' %>
-          </div>
+        <% if @vendors.empty? %>
+          Debes registrar un vendedor antes de seguir.
+          <%= link_to "Registrar Vendedor", %>
+        <% elsif @percent_catalogs.empty? %>
+          Debes registrar una tarjeta antes de seguir.
+          <%= link_to "Registrar tarjeta", %>
+        <% else %>
+          <%= form_for :balance, url: client_balances_path do |f| %>
+            <div class="input-group form-control">
+              <%= fields_for :balance_information do |balance_information_form| %>
+                <%= balance_information_form.label :amount, "Cantidad", class:'form-control' %>
+                <%= balance_information_form.text_field :amount, class:'form-control'%>
+            </div>
+            <div class="input-group form-control">
+              <%= balance_information_form.label :note_number, "Nota de venta", class: 'form-control' %>
+              <%= balance_information_form.text_field :note_number, class:'form-control'%>
               <% end %>
-              <div class="input-group form-control">
-                <%= fields_for :percent_catalog do |percent_catalog_form| %>
-                  <br>  <%= percent_catalog_form.label :percent, "Porcentaje" %> </br>
-                  <%= percent_catalog_form.select :percent, @percent_catalogs.collect {|p| [ p.percent, p.id ] }, class:'form-control' %>
+            </div>
+            <div class="input-group-addon form-control">
+              <table class="table table-responsive">
+                <%= fields_for :vendor do |vendor_form| %>
+                  <%= vendor_form.label :vendor, "Vendedor", class:'form-control' %>
+                  <%= vendor_form.select :vendor,@vendors.collect {|v| [ v.name, v.id ] }, class:'form-control' %>
+
                 <% end %>
-                <br> <%= f.submit "Agregar puntos", class:'btn btn-primary'%> </br>
+                <div class="input-group form-control">
+                  <%= fields_for :card do |percent_catalog_form| %>
+                    <br>  <%= percent_catalog_form.label :percent, "Porcentaje" %> </br>
+                    <%= percent_catalog_form.select :percent, @percent_catalogs.collect {|p| [ "#{p.title} #{p.percent}", p.id ] }, class:'form-control' %>
+                  <% end %>
+                  <br> <%= f.submit "Agregar puntos", class:'btn btn-primary'%> </br>
+                </div>
+              </table>
+            </div>
+          <% end %>
         <% end %>
-            </table>
-              </div>
       </div>
     </div>
   </div>
