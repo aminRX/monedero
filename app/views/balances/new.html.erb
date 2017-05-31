@@ -9,10 +9,10 @@
         <% end %>
         <% if @vendors.empty? %>
           Debes registrar un vendedor antes de seguir.
-          <%= link_to "Registrar Vendedor", %>
+          <%= link_to "Registrar Vendedor", new_vendor_path %>
         <% elsif @percent_catalogs.empty? %>
           Debes registrar una tarjeta antes de seguir.
-          <%= link_to "Registrar tarjeta", %>
+          <%= link_to "Registrar tarjeta", new_card_path %>
         <% else %>
           <%= form_for :balance, url: client_balances_path do |f| %>
             <div class="input-group form-control">
