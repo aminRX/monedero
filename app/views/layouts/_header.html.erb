@@ -1,5 +1,5 @@
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
               aria-controls="navbar">
@@ -9,9 +9,9 @@
         <span class="icon-bar"></span>
       </button>
       <% if is_branch_office? %>
-        <%= link_to 'Sucursal', root_path, class: "navbar-brand" %>
+        <%= link_to current_user.userid, root_path, class: "navbar-brand" %>
       <% else %>
-        <%= link_to "Administrador", root_path, class: "navbar-brand" %>
+        <%= link_to "Administrador: #{current_user.userid}", root_path, class: "navbar-brand" %>
       <% end %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
