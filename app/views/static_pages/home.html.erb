@@ -10,7 +10,7 @@
         <% end %>
         <%= form_for :client, url: clients_search_path do |f| %>
           <%= f.label :client_number, "Numero de Cliente"%>
-          <%= f.text_field :client_number, class: 'form-control form-group' %><br />
+          <%= f.text_field :client_number, class: 'form-control form-group', :required => true %><br />
           <%= f.submit "Buscar", class:'btn btn-primary' %>
         <% end %>
       </div>
