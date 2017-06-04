@@ -1,3 +1,14 @@
+<% if flash[:success_actived] %>
+  <div class="alert alert-success">
+    <strong><%= flash[:success_actived] %></strong>
+  </div>
+<% end %>
+<% if flash[:error_delete] %>
+  <div class="alert alert-danger">
+    <strong><%= flash[:error_delete] %></strong>
+  </div>
+<% end %>
+
 <table class="table">
   <tr>
     <th>Id de usuario</th>

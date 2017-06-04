@@ -25,8 +25,13 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find params[:id]
     @actived = !@user.active
+    if @actived
+      message = "Activado"
+    else
+      message = "Desactivado"
+    end
     if @user.update_attribute(:active, @actived)
-      flash[:success_actived] = "Usuario #{@user[:name]} desactivado"
+      flash[:success_actived] = "Usuario #{@user.userid} #{message}"
       redirect_to users_path
     else
       flash[:error_delete] = "Usuario no se pudo desactivar"
