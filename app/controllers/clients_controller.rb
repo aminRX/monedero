@@ -21,7 +21,7 @@ class ClientsController < ApplicationController
     if user
       @client = user.clients.find_by_id(params[:id])
       @client_profile = @client.client_profile
-      @balance = @client.balances.joins(:vendor) || []
+      @balance = @client.balances.joins(:vendor).order(created_at: :desc) || []
       @point_number = @balance.where(archived: false).sum(:point)
       @balances = Kaminari.paginate_array(@balance).page(params[:page]).per(25)
     end
