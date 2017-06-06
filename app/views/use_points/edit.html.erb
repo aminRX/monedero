@@ -1,10 +1,18 @@
+ <div class="row-fluid">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+      <div class="panel panel-info">
+        <div class="panel-heading">
 <h1>Editar puntos usados.</h1>
 <%= form_for :balance, url: use_points_path(@balance.id) do |f| %>
-  <%= f.label :point %>:
-  <%= f.number_field :point %><br />
+  <%= f.label :point, "Puntos", class:'form-control'%>:
+  <%= f.number_field :point, class:'form-control' %><br />
   <%= fields_for :vendor do |vendor_form| %>
     <%= vendor_form.label :name, "Vendedor", class:'form-control' %>
     <%= vendor_form.select :name, @vendors.collect {|v| [ v.name, v.id ] }, class:'form-control' %>
   <% end %>
-  <%= f.submit "Editar" %>
+  <%= f.submit "Editar", class:'btn btn-primary' %>
 <% end %>
+</div>
+  </div>
+    </div>  
+      </div>

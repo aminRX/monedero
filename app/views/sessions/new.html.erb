@@ -1,22 +1,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="session-background-image">
-  <div class="container">
-    <div class="login-container">
+<div class="session-background">
+
+    
+<center>
+    <div class="fluid-container">
+<div class="login-container">
+      <div id="login">
+
+
+          <fieldset class="clearfix">
       <% if flash[:error] %>
         <div class="alert alert-danger">
           <strong><%= flash[:error] %></strong>
         </div>
       <% end %>
-      <div id="output"></div>
-      <div class="avatar"></div>
-      <div class="form-box">
+      <div class="container-box">
+        
         <%= form_for :sessions, url: sessions_path do |f|  %>
-          <%= f.label  :userid, "Usuario", class: 'form-control input-group-addon icon_profile pull_right' %>
-          <%= f.text_field  :userid, class:'form-control '%>
-          <%= f.label :password, "Contrasena", class:'form-control input-group-addon icon_profile  pull_right'  %>
-          <%= f.password_field :password, class:'form-control input-group'%>
-          <%= f.submit 'Entrar', class: 'btn btn-primary btn-lg btn-block' %>
+          <%= f.label  :userid ,'Usuario', class: ' input-group span' %>
+          <%= f.text_field  :userid,class:'form-control fa fa-lock input pull-left',  placeholder: " Usuario "%>
+          <%= f.label :password, 'Contrasena', class:' input-group '  %>
+          <%= f.password_field :password, class:'form-control input pull-left', placeholder: "Contrasena"%>
+          <%= f.submit 'Entrar', class: 'btn btn-primary pull-right' %>
+      </div>
+          </div>
         <% end %>
+        <div class="clearfix"></div>
+        </form>
+
+        <div class="clearfix"></div>
+
+      </div> <!-- end login -->
+      <div class="logo">Monedero 
+                          Club
+          
+          <div class="clearfix"></div>
+      </div>
+      
+      </div>
+</center>
+    </div>
+
+</div>
+
       </div>
     </div>
   </div>

@@ -7,63 +7,127 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+            div.session-background {
+    background: #222; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #0264d6 1%, #1c2b5a 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#0264d6), color-stop(100%,#1c2b5a)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0264d6', endColorstr='#1c2b5a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+height:calc(100vh);
+width:100%;
+}
 
-            .session-background-image {
-              background-image: url('telcel.jpg');
-              background-size: 100% 100%;
-              width: 100%;
-              height: 100%;
-              position: absolute;
-            }
-            .login-container{
-              position: relative;
-              width: 300px;
-              margin: 80px auto;
-              padding: 20px 40px 40px;
-              text-align: center;
-              background:#e0e0e0;
-              border: 1px solid #ccc;
-            }
-            #output{
-              position: absolute;
-              width: 300px;
-              top: -75px;
-              left: 0;
-              color: #fff;
-            }
+#login form{
+	width: 250px;
+}
+#login .logo{
+    display:inline-block;
+    width:40%;
+}
+#login{
+border-left:1px solid #fff;
+  padding: 0px 50px;
+  width: 59%;
+}
+.logo{
+color:#fff;
+font-size:50px;
+}
+
+* {
+  box-sizing: border-box;
+    margin:0px auto;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+
+}
+
+.container-box {
+	border: none;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+	padding: 0;
+	-webkit-appearance: none;
+}
+
+
+.clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+}
+
+.fluid-container {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#login form .input {
+	height: 50px;
+}
+fieldset{
+    padding:0;
+    border:0;
+    margin: 0;
+
+}
+#login form .input[type="text"], input[type="password"] {
+	background-color: #fff;
+	border-radius: 0px 3px 3px 0px;
+	color: #000;
+	margin-bottom: 1em;
+	padding: 0 16px;
+	width: 200px;
+}
+
+#login form .input[type="submit"] {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #000000;
+  color: #eee;
+  font-weight: bold;
+  /* margin-bottom: 2em; */
+  padding: 5px 10px;
+  height: 30px;
+}
+
+#login form .btn-primary[type="submit"]:hover {
+	background-color: #000;
+}
+
+#login > p {
+	text-align: center;
+}
+
+
+
+          
             #output.alert-success{
               background: rgb(25, 204, 25);
             }
             #output.alert-danger{
               background: rgb(228, 105, 105);
             }
-            .login-container::before,.login-container::after{
-              content: "";
-              position: absolute;
-              width: 100%;height: 100%;
-              top: 3.5px;left: 0;
-              background: #fff;
-              z-index: -1;
-              -webkit-transform: rotateZ(4deg);
-              -moz-transform: rotateZ(4deg);
-              -ms-transform: rotateZ(4deg);
-              border: 1px solid #ccc;
-            }
-            .login-container::after{
-              top: 5px;
-              z-index: -2;
-              -webkit-transform: rotateZ(-2deg);
-              -moz-transform: rotateZ(-2deg);
-              -ms-transform: rotateZ(-2deg);
-            }
-            .avatar{
-              width: 100px;height: 100px;
-              margin: 10px auto 30px;
-              border-radius: 100%;
-              border: 2px solid #aaa;
-              background-image: url('boss.png');
-              background-size: cover;
-            }
+           
             .form-box input{
               width: 100%;
               padding: 10px;
@@ -78,7 +142,6 @@
             }
             .form-box input[type="text"]{
               border-radius: 5px 5px 0 0;
-              text-transform: lowercase;
             }
             .form-box input[type="password"]{
               border-radius: 0 0 5px 5px;
