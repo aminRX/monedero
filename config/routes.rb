@@ -18,8 +18,7 @@ Rails.application.routes.draw do
   resources :vendors, except: :show
   resources :cards
   resources :sessions, only: [ :create ]
-  resources :users, only: [ :show, :new, :create, :index ]
-  resources :percent_catalogs, only: [ :show, :new, :create, :index ]
+  resources :users, only: [ :show, :new, :create, :index, :destroy ]
   resources :use_points, only: [ :new, :create, :edit, :update, :show ]
 
   resources :clients, only: [ :show, :new, :create, :index, :edit, :update] do

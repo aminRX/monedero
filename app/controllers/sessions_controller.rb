@@ -7,12 +7,15 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by_userid session_params[:userid]
-    if @user && @user.authenticate(session_params[:password])
+    if @user && @user.authenticate(session_params[:password]) && @user.active
       sign_in @user
       flash[:joined] = 'Bienvenido'
       redirect_to sign_in_path
+    elsif @user && !@user.active
+      flash[:error] = "Usuario inactivo"
+      redirect_to sign_in_path
     else
-      flash[:error] =  "Incorrecto UserId / Password"
+      flash[:error] = "Incorrecto UserId / Password"
       redirect_to sign_in_path
     end
   end
@@ -23,6 +26,14 @@ class SessionsController < ApplicationController
   end
 
   private
+
+  def message(active)
+    if active
+      return 'Usuario inactivo'
+    else
+      return 'Incorrecto UserId / Password'
+    end
+  end
 
   def session_params
     params.require(:sessions).permit(:userid, :password)

@@ -1,13 +1,30 @@
+<% if flash[:success_actived] %>
+  <div class="alert alert-success">
+    <strong><%= flash[:success_actived] %></strong>
+  </div>
+<% end %>
+<% if flash[:error_delete] %>
+  <div class="alert alert-danger">
+    <strong><%= flash[:error_delete] %></strong>
+  </div>
+<% end %>
+
 <table class="table">
   <tr>
     <th>Id de usuario</th>
     <th>Fecha de creacion</th>
+    <th>Estado</th>
   </tr>
   <% @users.each do |user| %>
     <% if user.role.name != 'admin' %>
       <tr>
         <td><%= link_to user.userid, user_path(user.id) %></td>
         <td><%= user.created_at %></td>
+        <% if user.active %>
+          <td><%= link_to "Desactivar", user_path(user[:id]), method: :delete %></td>
+        <% else %>
+          <td><%= link_to "Activar", user_path(user[:id]), method: :delete %></td>
+        <% end %>
       </tr>
     <% end %>
   <% end %>

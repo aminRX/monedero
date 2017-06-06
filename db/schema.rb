@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408170508) do
+ActiveRecord::Schema.define(version: 20170604084010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,16 @@ ActiveRecord::Schema.define(version: 20170408170508) do
     t.index ["percent"], name: "index_percent_catalogs_on_percent", unique: true, using: :btree
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "supervisor"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string   "name",       default: "branch_office", null: false
     t.datetime "created_at",                           null: false
@@ -97,10 +107,10 @@ ActiveRecord::Schema.define(version: 20170408170508) do
     t.string   "userid"
     t.string   "password_digest"
     t.string   "auth_token"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "roles_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "role_id"
+    t.boolean  "active",          default: true
     t.index ["auth_token"], name: "index_users_on_auth_token", unique: true, using: :btree
     t.index ["role_id"], name: "index_users_on_role_id", using: :btree
     t.index ["userid"], name: "index_users_on_userid", unique: true, using: :btree
@@ -126,6 +136,7 @@ ActiveRecord::Schema.define(version: 20170408170508) do
   add_foreign_key "cards", "users"
   add_foreign_key "client_profiles", "clients"
   add_foreign_key "clients", "users"
+  add_foreign_key "profiles", "users"
   add_foreign_key "users", "roles"
   add_foreign_key "vendors", "users"
 end

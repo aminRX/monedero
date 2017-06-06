@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_one :branch_office
   belongs_to :role, optional: true
 
+  has_one :profile
+  accepts_nested_attributes_for :profile
+
   private
 
   def as_branch_office

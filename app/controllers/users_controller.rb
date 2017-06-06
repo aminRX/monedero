@@ -19,7 +19,23 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.all.order(created_at: :desc)
+  end
+
+  def destroy
+    @user = User.find params[:id]
+    @actived = !@user.active
+    if @actived
+      message = "Activado"
+    else
+      message = "Desactivado"
+    end
+    if @user.update_attribute(:active, @actived)
+      flash[:success_actived] = "Usuario #{@user.userid} #{message}"
+      redirect_to users_path
+    else
+      flash[:error_delete] = "Usuario no se pudo desactivar"
+    end
   end
 
   private
