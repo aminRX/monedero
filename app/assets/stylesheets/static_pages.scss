@@ -1,53 +1,57 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@media (min-width: 768px){
-    .sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #1A237E;
-    border-right: 1px solid #eee;
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 51px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #222;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .btn-primary {
+    color: #fff;
+    background-color: #222;
+    border-color: #222;
+}
+.sidebar ul li a{
+    width: 255px;
+    color: #999;
+}
+.nav-sidebar li a{
+    padding: 15px 60px;
+    background-color: #000;
 }
 .navbar-fixed-top {
     border: 0;
-    background-color: #0D47A1;
-    color: #fff;
-}
-.navbar-inverse .navbar-brand {
-    color: #fff;
-}
-inverse .navbar-nav>li>a:hover {
-    color: #fff;
-    background-color: transparent;
-}
-.sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #1A237E;
-    border-right: 1px solid #eee;
-    color: #fff;
+    background-color: #333;
+    color: #9d9d9d;
 }
 
-.nav>li>a :hover {
-    position: relative;
-    display: block;
+.navbar-inverse .navbar-nav>li {
+    color: #9d9d9d;
+}
+.sidebar>li>ul>a:hover {
+    color: #9d9d9d;
+}
+
+.side-nav li a:focus,
+.side-nav>ul>li>a:hover {
     font-size: 14px;
-    color: #fff;  
+    color: #9d9d9d;  
+        outline: none;
+        background-color: #000 !important;    
+    
       
 
 }
+
 }
