@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="col-md-4">
-      <% if @percent_catalogs %>
+      <% if @percent_catalogs.empty? %>
         <p>Debes registrar un vendedor antes de seguir.</p>
         <%= link_to "Registrar tarjeta", new_card_path %>
       <% else %>
