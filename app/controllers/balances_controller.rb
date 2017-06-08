@@ -7,9 +7,9 @@ class BalancesController < ApplicationController
   def create
     user = current_user
     @vendor = Vendor.find(vendor_params[:vendor])
-    @percent_catalog = user.cards.find(percent_catalog_params[:percent])
-    if user && @vendor && @percent_catalog
+    if user && @vendor
       client = user.clients.find_by_id params[:client_id]
+      @percent_catalog = Card.find_by_id(client.card_id)
       add_points = add_points_params(@vendor, @percent_catalog)
       balances = client.balances.new(add_points)
       balances.calculate_points(

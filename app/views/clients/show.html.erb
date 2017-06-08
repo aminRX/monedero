@@ -41,6 +41,14 @@
                 <td>Modelo de Telefono</td>
                 <td><%= @client_profile.phone_model %></td>
               </tr>
+              <tr>
+                <td>Tarjeta</td>
+                <td><%= @card.title %></td>
+              </tr>
+              <tr>
+                <td>Porcentaje</td>
+                <td><%= @card.percent %></td>
+              </tr>
             </tbody>
           </table>
           <%= link_to "Agregar puntos.", new_client_balance_path(@client.id), class:'btn btn-primary form-control' %>
